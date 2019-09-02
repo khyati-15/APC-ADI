@@ -17,8 +17,6 @@ class KMPAlgo{
                 j = arr[j - 1]; 
 			}
 			else if (i < len2 && pattern.charAt(j) != text.charAt(i)) { 
-                // Do not match lps[0..lps[j-1]] characters, 
-                // they will match anyway 
                 if (j != 0) 
                     j = arr[j - 1]; 
                 else
@@ -43,7 +41,7 @@ class KMPAlgo{
     }
 	}
 	
-	 public static void main(String args[]) 
+	public static void main(String args[]) 
     { 
         String txt = "AABAACAADAABAABA"; 
         String pat = "AABA"; 

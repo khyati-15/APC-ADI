@@ -9,7 +9,7 @@ class KnapSack{
 		for(int i=0;i<7;i++)
 			pw[i]=(float)p[i]/w[i];
 		
-		int c=15;
+		float c=15;
 		
 		for(int i=0;i<6;i++){
 			for(int j=0;j<6-i;j++){
@@ -30,13 +30,16 @@ class KnapSack{
 		}
 		float currentcap=c;
 		float currentprofit=0;
-		for(int i=6;i>=0 && currentcap>0;i--){
+		for(int i=6;i>=0 && currentcap!=0;i--){
 			if(w[i]<currentcap){
 				currentcap-=w[i];
+				System.out.println(pw[i]);
 				currentprofit+=p[i];
 			}
 			else{
+				System.out.println(pw[i]);
 				currentprofit+=((currentcap/w[i])*p[i]);
+				currentcap=0;
 			}
 		}
 		System.out.println(currentprofit);
