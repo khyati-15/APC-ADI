@@ -13,10 +13,10 @@ using namespace std;
 void heapify(int A[],int i,int size){
     int max=i;
     int l=(2*i)+1,r=(2*i)+2;
-    if(l<size && A[l]>max)
+    if(l<size && A[l]>A[max])
     max=l;
     
-    if(r<size && A[r]>max)
+    if(r<size && A[r]>A[max])
     max=r;
     
     if(max!=i){
